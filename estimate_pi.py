@@ -1,7 +1,9 @@
+import numpy as np
+
 def estimate_pi(num_samples):
-    """
-    Replace the code below with your own implementation.
-    """
-    ### Replace with your own code (begin) ###
-    pass
-    ### Replace with your own code (end)   ###
+    points = np.random.rand(num_samples, 2)
+    
+    squared_distances = (points[:, 0] ** 2) + (points[:, 1] ** 2)
+    inside_circle_count = np.sum(squared_distances <= 1)
+    
+    return 4 * inside_circle_count / num_samples
